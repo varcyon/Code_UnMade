@@ -59,6 +59,8 @@ void UExperienceAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePropert
 	DOREPLIFETIME_CONDITION_NOTIFY(UExperienceAttributeSet, CurrentExp, COND_None, REPNOTIFY_Always);
 	
 	DOREPLIFETIME_CONDITION_NOTIFY(UExperienceAttributeSet, NeededExp, COND_None, REPNOTIFY_Always);
+
+	DOREPLIFETIME_CONDITION_NOTIFY(UExperienceAttributeSet, Level, COND_None, REPNOTIFY_Always);
 }
 
 void UExperienceAttributeSet::OnRep_CurrentExp(const FGameplayAttributeData& OldCurrentExp)
@@ -69,4 +71,9 @@ void UExperienceAttributeSet::OnRep_CurrentExp(const FGameplayAttributeData& Old
 void UExperienceAttributeSet::OnRep_NeededExp(const FGameplayAttributeData& OldNeededExp)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UExperienceAttributeSet, NeededExp, OldNeededExp);
+}
+
+void UExperienceAttributeSet::OnRep_Level(const FGameplayAttributeData& OldLevel)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UExperienceAttributeSet, Level, OldLevel);
 }

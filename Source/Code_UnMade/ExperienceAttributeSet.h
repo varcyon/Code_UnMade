@@ -30,6 +30,10 @@ public:
 	FGameplayAttributeData NeededExp = 100.0;
 	ATTRIBUTE_ACCESSORS(UExperienceAttributeSet, NeededExp)    
 
+	UPROPERTY(BlueprintReadOnly, Category = "", ReplicatedUsing = OnRep_Level)
+	FGameplayAttributeData Level = 1;
+	ATTRIBUTE_ACCESSORS(UExperienceAttributeSet, Level)
+
 protected:
 	
 	UFUNCTION()
@@ -38,5 +42,7 @@ protected:
 	UFUNCTION()
 	virtual void OnRep_NeededExp(const FGameplayAttributeData& OldNeededExp);
 	
-	
+	UFUNCTION()
+	virtual void OnRep_Level(const FGameplayAttributeData& OldLevel);
+
 };
