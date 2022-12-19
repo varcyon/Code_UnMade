@@ -23,15 +23,15 @@ public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 		
 	UPROPERTY(BlueprintReadOnly, Category = "", ReplicatedUsing = OnRep_CurrentExp)
-	FGameplayAttributeData CurrentExp = 0.0;
+	FGameplayAttributeData CurrentExp ;
 	ATTRIBUTE_ACCESSORS(UExperienceAttributeSet, CurrentExp)    
 	
 	UPROPERTY(BlueprintReadOnly, Category = "", ReplicatedUsing = OnRep_NeededExp)
-	FGameplayAttributeData NeededExp = 100.0;
+	FGameplayAttributeData NeededExp;
 	ATTRIBUTE_ACCESSORS(UExperienceAttributeSet, NeededExp)    
 
 	UPROPERTY(BlueprintReadOnly, Category = "", ReplicatedUsing = OnRep_Level)
-	FGameplayAttributeData Level = 1;
+	FGameplayAttributeData Level ;
 	ATTRIBUTE_ACCESSORS(UExperienceAttributeSet, Level)
 
 protected:
