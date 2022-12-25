@@ -63,6 +63,8 @@ void UResistanceAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePropert
 	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Water, COND_None, REPNOTIFY_Always);
 	
 	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Nature, COND_None, REPNOTIFY_Always);
+
+	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Electric, COND_None, REPNOTIFY_Always);
 	
 	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Shadow, COND_None, REPNOTIFY_Always);
 	
@@ -73,6 +75,10 @@ void UResistanceAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimePropert
 	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Piercing, COND_None, REPNOTIFY_Always);
 	
 	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Crushing, COND_None, REPNOTIFY_Always);
+
+	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Physical, COND_None, REPNOTIFY_Always);
+
+	DOREPLIFETIME_CONDITION_NOTIFY(UResistanceAttributeSet, Magic, COND_None, REPNOTIFY_Always);
 }
 
 void UResistanceAttributeSet::OnRep_Fire(const FGameplayAttributeData& OldFire)
@@ -93,6 +99,11 @@ void UResistanceAttributeSet::OnRep_Water(const FGameplayAttributeData& OldWater
 void UResistanceAttributeSet::OnRep_Nature(const FGameplayAttributeData& OldNature)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UResistanceAttributeSet, Nature, OldNature);
+}
+
+void UResistanceAttributeSet::OnRep_Electric(const FGameplayAttributeData& OldElectric)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UResistanceAttributeSet, Electric, OldElectric);
 }
 
 void UResistanceAttributeSet::OnRep_Shadow(const FGameplayAttributeData& OldShadow)
@@ -118,4 +129,13 @@ void UResistanceAttributeSet::OnRep_Piercing(const FGameplayAttributeData& OldPi
 void UResistanceAttributeSet::OnRep_Crushing(const FGameplayAttributeData& OldCrushing)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UResistanceAttributeSet, Crushing, OldCrushing);
+}
+void UResistanceAttributeSet::OnRep_Physical(const FGameplayAttributeData& OldPhysical)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UResistanceAttributeSet, Physical, OldPhysical);
+}
+
+void UResistanceAttributeSet::OnRep_Magic(const FGameplayAttributeData& OldMagic)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UResistanceAttributeSet, Magic, OldMagic);
 }
